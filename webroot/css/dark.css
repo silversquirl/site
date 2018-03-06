@@ -1,0 +1,24 @@
+/* Colours, etc. */
+body {
+  color: #fff;
+  background-color: #111;
+}
+
+a { color: #0df; }
+a:visited { color: #f3f; }
+
+footer {
+  border-top: 1px solid #ccc;
+  color: #ccc;
+  background-color: #333;
+}
+
+footer a, footer a:visited {
+  color: #aaa;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #eee;
+  text-decoration: underline;
+}

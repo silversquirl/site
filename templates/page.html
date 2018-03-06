@@ -1,0 +1,31 @@
+$$$
+IFS=\; read -r -a cookies <<<"$HTTP_COOKIE"
+
+for c in "${cookies[@]}"; do
+  if [[ "${c%%=*}" = dark ]]; then
+    dark=Light
+    break
+  fi
+done
+$$$
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>
+  $> e "$title"
+  | vktec
+</title>
+<link href="//fonts.googleapis.com/css?family=Raleway:300|Roboto:300" rel="stylesheet">
+<link href="/css/main.css" rel="stylesheet">
+$> echo "${dark:+<link href="/css/dark.css" rel="stylesheet">}"
+
+<main>
+  $> echo "$content"
+</main>
+
+<footer>
+  <span>Copyright &copy; Samadi van Koten 2018</span>
+  <a href="/cgi-bin/flip-colour-scheme.cgi">
+    $> echo "${dark:-Dark} colour scheme"
+  </a>
+</footer>

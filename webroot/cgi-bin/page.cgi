@@ -20,7 +20,7 @@ notfound() {
 [[ "$PATH_INFO" = *../* ]] && notfound
 [[ "$PATH_INFO" = */..* ]] && notfound
 
-[[ "$PATH_INFO" = / ]] && export PATH_INFO="/index"
+[[ -d "pages/$PATH_INFO" ]] && export PATH_INFO="$PATH_INFO/index"
 
 src="pages/$PATH_INFO.md"
 [[ -f "$src" ]] || notfound

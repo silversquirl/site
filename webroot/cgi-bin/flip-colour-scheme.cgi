@@ -9,6 +9,6 @@ for c in "${cookies[@]}"; do
   fi
 done
 
-echo "Set-Cookie: dark=; Path=/${del:+; Max-Age=-1}"
+echo "Set-Cookie: dark=chocolate; Path=/${del:+; Max-Age=-1}"
 echo "Location: $HTTP_REFERER"
 echo

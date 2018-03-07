@@ -54,3 +54,5 @@ footer a:hover {
   color: #eee;
   text-decoration: underline;
 }
+
+footer nav a, footer nav a:visited { color: #ddd; }

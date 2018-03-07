@@ -33,7 +33,7 @@ footer {
 
 /* Colours, etc. */
 body {
-  color: #111;
+  color: #222;
   background-color: #fff;
 }
 
@@ -41,7 +41,7 @@ a { color: #00f; }
 a:visited { color: #90f; }
 
 footer {
-  color: #eee;
+  color: #ccc;
   background-color: #111;
 }
 

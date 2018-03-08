@@ -3,7 +3,9 @@ title="Home"
 $$$
 # vktec
 
-Hi! I'm Samadi, a programmer.
+Hi! I'm Samadi, a programmer. I have a [blog][].
+
+[blog]: /blog
 
 ## Projects
 

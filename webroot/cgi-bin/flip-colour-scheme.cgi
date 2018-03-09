@@ -4,11 +4,13 @@ IFS=\; read -r -a cookies <<<"$HTTP_COOKIE"
 
 for c in "${cookies[@]}"; do
   if [[ "${c%%=*}" = dark ]]; then
-    del=1
+    age=-1
     break
   fi
 done
 
-echo "Set-Cookie: dark=chocolate; Path=/${del:+; Max-Age=-1}"
+age="${age:-$((60*60*24*7*2))}" # Default to 2 weeks until expiry
+
+echo "Set-Cookie: dark=chocolate; Path=/; Max-Age=$age"
 echo "Location: ${HTTP_REFERER:-/}"
 echo

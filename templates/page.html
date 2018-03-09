@@ -5,14 +5,11 @@ else
   pgtitle="$title | vktec"
 fi
 
-IFS=\; read -r -a cookies <<<"$HTTP_COOKIE"
-
-for c in "${cookies[@]}"; do
-  if [[ "${c%%=*}" = dark ]]; then
-    dark=Light
-    break
-  fi
-done
+if [[ -n "$dark" ]]; then
+  otherscheme=Light
+else
+  otherscheme=Dark
+fi
 $$$
 
 <!DOCTYPE html>
@@ -36,6 +33,6 @@ $> echo "${dark:+<link href="/css/dark.css" rel="stylesheet">}"
     <a href="/blog">Blog</a>
   </nav>
   <a href="/cgi-bin/flip-colour-scheme.cgi">
-    $> echo "${dark:-Dark} colour scheme"
+    $> echo "$otherscheme colour scheme"
   </a>
 </footer>

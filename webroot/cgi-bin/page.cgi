@@ -13,6 +13,15 @@ notfound() {
   exit 1
 }
 
+IFS=\; read -r -a cookies <<<"$HTTP_COOKIE"
+for c in "${cookies[@]}"; do
+  if [[ "${c%%=*}" = dark ]]; then
+    echo "Set-Cookie: $c; Path=/; Max-Age=$((60*60*24*7*2))"
+    dark="${c#*=}"
+    break
+  fi
+done
+
 [[ -n "$REDIRECT_URI" ]] && export PATH_INFO="$REQUEST_URI"
 [[ -z "$PATH_INFO" ]] && notfound
 
